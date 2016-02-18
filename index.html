@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>React Slideshow</title>
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/moon.css" id="theme">
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="assets/logo.svg" data-background-size="300px" data-background-repeat="repeat">
+					<section>
+						<h1>React</h1>
+						A Javascript library for building User Interfaces
+					</section>
+					<section>
+						Just to build the UI
+					</section>
+					<section>
+						Virtual DOM
+					</section>
+					<section>
+						One way data flow
+					</section>
+				</section>
+				<section data-background="assets/what-else.jpg">
+					<section data-transition="fade-in fade-out">
+						<h2>What else?</h2>
+						<h6>&nbsp;</h6>
+					</section>
+					<section data-transition="fade-in fade-out">
+						<h2>What else?</h2>
+						<h6>Think UI as components!</h6>
+					</section>
+					<section data-transition="fade-in fade-out">
+						<h2>What else?</h2>
+						<h6>JSX FTW!</h6>
+					</section>
+					<section data-transition="fade-in fade-out">
+						<h2>What else?</h2>
+						<h6>Clean component lifecycle!</h6>
+					</section>
+					<section data-transition="fade-in fade-out">
+						<h2>What else?</h2>
+						<h6>Best practices!</h6>
+					</section>
+				</section>
+				<section data-background="assets/logo.svg" data-background-size="300px" data-background-repeat="repeat">
+					<img data-src="assets/profil.jpg" width="500" height="500">
+					<br>
+					<a href="https://twitter.com/caedes" target="blank">@caedes</a>
+				</section>
+				<section data-background="assets/logo.svg" data-background-size="300px" data-background-repeat="repeat">
+					Just to build the UI
+					<br>
+					<img data-src="assets/just-the-ui.png">
+					<br>
+					<a href="https://blog.formidable.com/using-react-is-a-business-decision-not-a-technology-choice-63c4641c5f7#.5f24unv3m" target="blank"><small>Source</small></a>
+				</section>
+				<section data-background="assets/logo.svg" data-background-size="300px" data-background-repeat="repeat">
+					Virtual DOM
+					<br>
+					<img data-src="assets/virtual-dom.png">
+					<br>
+					<a href="http://calendar.perfplanet.com/2013/diff/" target="blank"><small>Source</small></a>
+				</section>
+				<section data-background="assets/logo.svg" data-background-size="300px" data-background-repeat="repeat">
+					One way data flow
+					<br>
+					<img data-src="assets/one-data-flow.png">
+				</section>
+				<section data-background="assets/logo.svg" data-background-size="300px" data-background-repeat="repeat">
+					<section>
+						<h2>Thinking in React</h2>
+						<h6 class="fragment">1. Your UI should be a function of your data.</h6>
+						<blockquote class="fragment">What data is required for this piece of the UI?</blockquote>
+						<blockquote class="fragment">How can I transform that data into DOM components?</blockquote>
+					</section>
+					<section>
+						<img data-src="assets/thinking-in-react-components.png" class="plain">
+						<br>
+						<pre><code data-trim data-noescape class="ruby">
+FilterableProductTable # contains the entirety of the example
+SearchBar # receives all user input
+ProductTable # displays and filters the data based on user input
+ProductCategoryRow # displays a heading for each category
+ProductRow # displays a row for each product
+						</code></pre>
+					</section>
+					<section>
+						Components hierarchy
+						<pre><code data-trim data-noescape class="yaml">
+- FilterableProductTable
+	- SearchBar
+	- ProductTable
+		- ProductCategoryRow
+		- ProductRow
+						</code></pre>
+					</section>
+				</section>
+				<section data-background="assets/logo.svg" data-background-size="300px" data-background-repeat="repeat">
+					<section>
+						<h2>Thinking in React</h2>
+						<h6 class="fragment">2. Never touch the DOM again!</h6>
+					</section>
+				</section>
+				<section>
+					<em>Thanks!</em>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				transitionSpeed: 'fast',
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
