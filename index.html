@@ -91,8 +91,8 @@
 				</section>
 				<section data-background="assets/logo.svg" data-background-size="300px" data-background-repeat="repeat">
 					<section>
-						<h2>Thinking in React</h2>
-						<h6 class="fragment">1. Your UI should be a function of your data.</h6>
+						<h2>Thinking in React 1</h2>
+						<h6 class="fragment">Your UI should be a function of your data.</h6>
 						<blockquote class="fragment">What data is required for this piece of the UI?</blockquote>
 						<blockquote class="fragment">How can I transform that data into DOM components?</blockquote>
 					</section>
@@ -120,12 +120,89 @@ ProductRow # displays a row for each product
 				</section>
 				<section data-background="assets/logo.svg" data-background-size="300px" data-background-repeat="repeat">
 					<section>
-						<h2>Thinking in React</h2>
-						<h6 class="fragment">2. Never touch the DOM again!</h6>
+						<h2>Thinking in React 2</h2>
+						<h6 class="fragment">Never touch the DOM again!</h6>
+						<blockquote class="fragment">React abstracts the real DOM away from you by utilizing a virtual DOM.</blockquote>
+						<blockquote class="fragment">Use React's declarative programming model to tell it what you want to render.</blockquote>
+					</section>
+					<section>
+						jQuery
+						<pre><code data-trim data-noescape class="javascript">
+$myBtn = $('button');
+$myBtn.addClass('button');
+if (toggled) {
+  $myBtn.addClass('toggled');
+}
+$myBtn.appendTo($('body'));
+
+$myBtn.toggleClass('toggled', toggled);
+						</code></pre>
+					</section>
+					<section>
+						React
+						<pre><code data-trim data-noescape class="javascript">
+var MyButton = React.createClass({
+  render: function() {
+    var classes = 'button';
+    if (this.state.toggled) classes += ' toggled';
+
+    return &lt;button className={classes}&gt;&lt;/button&gt;;
+  }
+});
+						</code></pre>
+					</section>
+					<section>
+						React + <a href="https://github.com/JedWatson/classnames" target="blank">classNames</a>
+						<pre><code data-trim data-noescape class="javascript">
+var MyButton = React.createClass({
+  render: function() {
+    var classes = classNames('button', {
+      toggled: this.state.toggled
+    });
+
+    return &lt;button className={classes}&gt;&lt;/button&gt;;
+  }
+});
+						</code></pre>
 					</section>
 				</section>
-				<section>
-					<em>Thanks!</em>
+				<section data-background="assets/logo.svg" data-background-size="300px" data-background-repeat="repeat">
+					<h2>Thinking in React 3</h2>
+					<h6 class="fragment">Invert your data flow</h6>
+					<blockquote class="fragment">Centralize data ownership and management into as few places as possible.</blockquote>
+					<blockquote class="fragment">Pass data into lower-level stateless components via properties.</blockquote>
+				</section>
+				<section data-background="assets/logo.svg" data-background-size="300px" data-background-repeat="repeat">
+					<h2>Thinking in React 4</h2>
+					<h6 class="fragment">Embrace composition</h6>
+					<blockquote class="fragment">Easier to identify components for your application at a mockup.</blockquote>
+					<blockquote class="fragment">Pass data into lower-level stateless components via properties.</blockquote>
+					<blockquote class="fragment">Smaller, reusable components are easier to test, and easier to reason about.</blockquote>
+				</section>
+				<section data-background="assets/logo.svg" data-background-size="300px" data-background-repeat="repeat">
+					<h2>Thinking in React 5</h2>
+					<h6 class="fragment">Beware mutable data</h6>
+					<blockquote class="fragment">React knows when data has changed.</blockquote>
+					<blockquote class="fragment">React relegates data changes to a calls to setState.</blockquote>
+					<blockquote class="fragment">Manually mutating data can actually cause some operations to be lost.</blockquote>
+					<br />
+					<a href="https://facebook.github.io/immutable-js/" target="blank" class="fragment">Immutable!</a>
+				</section>
+				<section data-background="assets/logo.svg" data-background-size="300px" data-background-repeat="repeat">
+					<h2>One more thing</h2>
+					<ul>
+						<li class="fragment"><a href="https://github.com/reactjs/react-router" target="blank">Redux</a> is a complete routing library for React.</li>
+						<li class="fragment"><a href="http://redux.js.org/" target="blank">Redux</a> is a predictable state container for JavaScript apps.</li>
+						<li class="fragment"><a href="https://github.com/reactuate/reactuate" target="blank">Reactuate</a> is an opinionated stack for building React/Redux-based frontend applications.</li>
+						<li class="fragment">Server-side rendering (isomorphic) to be SEO-friendly and speed initial loading time.</li>
+						<li class="fragment">Unit testing your components.</li>
+						<li class="fragment">...</li>
+					</ul>
+				</section>
+				<section data-background="assets/logo.svg" data-background-size="300px" data-background-repeat="repeat">
+					<h3>Have fun!</h3>
+					<br />
+					<em>Thanks</em>
 				</section>
 			</div>
 		</div>
